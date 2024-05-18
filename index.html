@@ -1,44 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Tip calculator app</title>
 
-  Bill
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="main-message-container">
+        <h1 class="main-message">SPLI<br />TTER</h1>
+      </div>
+      <div class="calc-container">
+        <div class="bill-container input-content">
+          <div class="bill-message">
+            <h3>Bill</h3>
+            <h3 class="error-text invisible" id="error-message2">
+              Numbers only
+            </h3>
+          </div>
+          <div class="input-container">
+            <img
+              alt="A dollar symbol"
+              src="images/icon-dollar.svg"
+              aria-hidden="true"
+            />
+            <input type="text" id="bill" placeholder="0" maxlength="6" />
+          </div>
+        </div>
+        <div class="tip-container input-content">
+          <h3>Select tip %</h3>
+          <div class="tip-buttons">
+            <button>5%</button>
+            <button>10%</button>
+            <button>15%</button>
+            <button>25%</button>
+            <button>50%</button>
+            <input id="custom-input" placeholder="Custom" maxlength="3" />
+          </div>
+        </div>
+        <div class="people-container input-content">
+          <div class="people-headers">
+            <h3>Number of People</h3>
+            <h3 class="error-text invisible" id="error-message1">
+              Numbers only
+            </h3>
+          </div>
+          <div class="input-container">
+            <img
+              alt="A cartoon of a person"
+              src="images/icon-person.svg"
+              aria-hidden="true"
+            />
+            <input type="text" id="people" placeholder="0" maxlength="4" />
+          </div>
+        </div>
+        <div class="result-container">
+          <div class="amount-container result-content">
+            <div class="message-container">
+              <p class="result-message">Tip Amount</p>
+              <p class="per-person-message">/ person</p>
+            </div>
+            <p class="result-display" id="tip-amount">$0.00</p>
+          </div>
+          <div class="total-container result-content">
+            <div class="message-container">
+              <p class="result-message">Total</p>
+              <p class="per-person-message">/ person</p>
+            </div>
+            <p class="result-display" id="total-amount">$0.00</p>
+          </div>
+          <div class="button-container">
+            <button id="reset-button" alt="Reset button">RESET</button>
+          </div>
+        </div>
+      </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div style="display: none">
+        Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount
+        / person Total / person Reset
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noopener"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/SartHak-0-Sach">Sarthak Sachdev</a>.
+      </div>
+      <script src="script.js"></script>
+    </main>
+  </body>
 </html>
