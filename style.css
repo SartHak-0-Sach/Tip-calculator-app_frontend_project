@@ -1,5 +1,409 @@
-*{
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+figure,
+p,
+blockquote,
+dl,
+dd {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+}
+
+.main-message-container {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    color: var(--very-dark-cyan);
+}
+
+.main-message {
+    margin-top: 5vh;
+    letter-spacing: 0.4rem
+}
+
+body {
+    max-height: 100vh;
+    background-color: var(--light-grayish-cyan);
+    font-family: "Space Mono";
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 375px) {
+    body {
+        min-height: 100vh;
+        max-height: 135vh;
+    }
+}
+
+.calc-container {
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    background-color: var(--white);
+    gap: 2rem;
+    row-gap: 1rem;
+    padding: 2rem;
+    display: grid;
+    border-radius: 1rem;
+    grid-template-rows: [row1-start] 6rem [row1-end row2-start] 6rem [row2-end row3-start] 6rem [row3-end];
+    grid-template-columns: repeat(2, 20rem);
+}
+
+@media only screen and (max-width: 375px) {
+    .calc-container {
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem;
+    }
+}
+
+/*.input-container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+  */
+.bill-container {
+    display: flex;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.bill-message {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.bill-message>h3 {
+    padding-bottom: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--dark-grayish-cyan);
+}
+
+.input-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-content>h3 {
+    padding-bottom: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--dark-grayish-cyan);
+}
+
+.input-content>input {
+    color: var(--grayish-cyan);
+}
+
+
+
+.people-headers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.invisible {
+    color: var(--white) !important;
+}
+
+.people-headers>h3 {
+    padding-bottom: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--dark-grayish-cyan);
+}
+
+#error-message {
+    text-align: right;
+}
+
+.visible {
+    color: red !important;
+}
+
+.error-display {
+    outline: red auto 1rem !important;
+    caret-color: red !important;
+}
+
+/*.input-content > input {
+    border-radius: .5rem .5rem .5rem .5rem;
+    border: 0;
+    background-color: var(--very-light-grayish-cyan);
+    height: 33%;
+  }*/
+
+.input-container {
+    position: relative;
+    display: flex;
+    border-radius: .5rem .5rem .5rem .5rem;
+    border: 0;
+    height: 33%;
+}
+
+
+.input-container>img {
+    height: 1rem;
+    position: absolute;
+    left: 0.8rem;
+    bottom: 0.1rem;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 375px) {
+    .input-container>img {
+        bottom: 0.9rem;
+    }
+}
+
+.input-container>input {
+    height: 1rem;
+    color: var(--grayish-cyan);
+    padding: 0.9rem;
+    font-size: 1.5rem;
+    font-family: "Space Mono";
+    text-align: right;
+    border: 0;
+    width: 100%;
+    background-color: var(--very-light-grayish-cyan);
+    border-radius: .5rem .5rem .5rem .5rem;
+    cursor: pointer;
+    caret-color: var(--strong-cyan);
+}
+
+.input-container>input:focus-visible {
+    outline: var(--strong-cyan) auto 1rem;
+}
+
+.input-container>input:hover {
+    outline: var(--strong-cyan) auto 1rem;
+}
+
+.tip-buttons {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-rows: [row1-start] 2.5rem [row1-end row2-start] 2.5rem [row2-end];
+    grid-template-columns: repeat(3, 6rem);
+}
+
+.tip-buttons>button {
+    font-family: "Space Mono";
+    font-size: 1.1rem;
+    background-color: var(--very-dark-cyan);
+    background-color: var(--very-dark-cyan);
+    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+    border: 0;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.tip-buttons>button:hover {
+    filter: brightness(1.1);
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
+}
+
+@media only screen and (max-width: 375px) {
+    .tip-buttons {
+        gap: 0.8rem;
+        grid-template-rows: [row1-start] 2.8rem [row1-end row2-start] 2.8rem [row2-end row3-start] 2.8rem [row3-end];
+        grid-template-columns: repeat(2, 9rem);
+        row-gap: 0.5rem;
+        column-gap: 1rem;
+    }
+}
+
+.mobile-tip-buttons:focus-visible {
+    background-color: var(--strong-cyan);
+}
+
+#custom-input {
+    display: block;
+    font-size: 1.1rem;
+    text-align: right;
+    border: 0;
+    font-family: 'Space Mono';
+    padding: 0.3rem;
+    background-color: var(--very-light-grayish-cyan);
+    caret-color: var(--strong-cyan);
+    cursor: pointer;
+}
+
+input::first-letter {
+    letter-spacing: 1rem !important;
+}
+
+#custom-input:focus-visible {
+    outline: var(--strong-cyan) auto 1rem;
+}
+
+#custom-input::placeholder {
+    color: var(--very-dark-cyan);
+    text-align: center;
+}
+
+#custom-input:hover {
+    outline: var(--strong-cyan) auto 1rem;
+}
+
+.result-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 375px) {
+    .result-content {
+        margin-bottom: 1rem;
+    }
+}
+
+.per-person-message {
+    font-size: 0.6rem;
+    color: var(--grayish-cyan);
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.result-message {
+    font-size: 0.8rem;
+    color: var(--white);
+    width: 50%;
+}
+
+.result-display {
+    font-size: 2rem;
+    color: var(--strong-cyan);
+    flex-grow: 1;
+    text-align: right;
+}
+
+@media only screen and (max-width: 375px) {
+    .tip-container {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.button-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: inherit;
+    margin: 2rem;
+}
+
+.shake {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-.1rem, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(.1rem, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-.1rem, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(.1rem, 0, 0);
+    }
+}
+
+.button-container>button {
+    opacity: 0.4;
+    font-family: "Space Mono";
+    font-size: 1rem;
+    width: 100%;
+    border: 0;
+    background-color: var(--strong-cyan);
+    color: var(--dark-grayish-cyan);
+    border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.button-container>button:hover {
+    filter: brightness(1.1);
+    opacity: 1;
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
+}
+
+@media only screen and (max-width: 375px) {
+    .button-container {
+        position: relative;
+        margin: 0;
+    }
+
+    .button-container>button {
+        background-color: var(--strong-cyan);
+        color: var(--very-dark-cyan);
+        opacity: 1;
+    }
+}
+
+.result-container {
+    border-radius: 0.5rem;
+    background-color: var(--very-dark-cyan);
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+@media only screen and (max-width: 375px) {
+    .result-container {
+        margin-top: 1rem;
+    }
 }
